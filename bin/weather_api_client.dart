@@ -7,7 +7,7 @@ class WeatherApiClient {
   static const baseUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
   Future<int> getLocationId(String city) async{
-    final locationUrl = Uri.parse('$baseUrl?q=$city&appid=d31cab9ba36058326b481bf2fb2c223e');
+    final locationUrl = Uri.parse('$baseUrl?q=$city&appid=$key');
     final locationResponse = await http.get(locationUrl);
 
     if(locationResponse.statusCode !=200) {
@@ -18,7 +18,7 @@ class WeatherApiClient {
   }
 
   Future <Weather> fetchWeather (int locationId) async {
-    final weatherUrl = Uri.parse('$baseUrl?id=$locationId&appid=d31cab9ba36058326b481bf2fb2c223e');
+    final weatherUrl = Uri.parse('$baseUrl?id=$locationId&appid=$key');
     final weatherResponse = await http.get(weatherUrl);
     print(weatherResponse.body);
     final weatherJson = jsonDecode(weatherResponse.body);
