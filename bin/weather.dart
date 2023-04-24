@@ -22,6 +22,6 @@ factory Weather.fromJson(Map<String, Object?> json) => Weather(
     Current Temp: ${temp.toStringAsFixed(0)}°C
     Feels like: ${feelsLike.toStringAsFixed(0)}°C
     Min temp: ${tempMin.toStringAsFixed(0)}°C
-    Max temp: ${tempMax.toStringAsFixed(0)}°C
+    Max temp: ${tempMax.toStringAsFixed(0)}°''C
  ''';
 }
